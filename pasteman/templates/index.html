@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <div class="main">
+    <h1>Paste</h1>
+    {% if messages %}
+    {{message}}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input name="title" placeholder="Title">
+        <textarea name="text" placeholder="Your message"></textarea>
+        <div class="liner"><p>Expire</p><input name="is_expired" type="checkbox"></div>
+        <button type="submit">Save</button>
+    </form>
+</div>
+    
+</body>
+</html>
+
+
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(154, 92, 255);
+    }
+    .main{
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        background-color: rgb(255, 233, 161);
+        padding: 12px;
+        border-radius: 12px;
+        width: max-content;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+    }
+    input, textarea{
+        border:0px;
+        border-radius:5px;
+        padding: 5px;
+    }
+    button{
+        background-color: black;
+        border-radius: 2px;
+        border: 0px;
+        color: white;
+    }
+    .liner{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
